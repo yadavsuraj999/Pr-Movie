@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* styles.css */
+
+.ProseMirror{
+    min-height: 120px;
+    height: 100%;
+    outline: none;
+    
+    margin: auto;
+}
+
+
+.tiptap h1 {
+  @apply text-4xl font-bold mb-3;
+}
+
+.tiptap h2 {
+  @apply text-3xl font-semibold mb-2;
+}
+
+.tiptap h3 {
+  @apply text-2xl font-medium mb-2;
+}
+
+.tiptap h4 {
+  @apply text-xl font-medium mb-1;
+}
+
+.tiptap h5 {
+  @apply text-lg font-medium mb-1;
+}
+
+.tiptap p {
+  @apply text-base text-white mb-1;
+}
+
+.tiptap {
+  @apply text-white;
+}
+
