@@ -1,16 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TiptapEditor from './TiptapEditor';
-import { useNavigate } from 'react-router-dom';
+import { data, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { useEditor } from '@tiptap/react';
 
-const AddMovieForm = () => {
+const Editmovie = () => {
   const [description, setDescription] = useState('');
   const [input, setInput] = useState({
     moviename: '',
     img: '',
     Genre: '',
   });
+
+  const {id} = useParams()
+
+  
+  useEffect(()=>{
+    const fetch = async ()=>{
+       const moviedata = await axios.get('http://localhost:5000/movies')
+       const data = moviedata.data.find((obj)=>{
+            return obj.id === id
+       })
+       setInput(data)
+    }
+    fetch()
+  }, [])
+
 
   const navigate = useNavigate();
 
@@ -32,8 +48,8 @@ const AddMovieForm = () => {
     };
 
     try {
-      await axios.post('http://localhost:5000/movies', movieData);
-      toast.success('Movie added successfully!');
+      await axios.put(`http://localhost:5000/movies/${id}`, movieData);
+      toast.success('Movie Update successfully!');
       setInput({
         moviename: '',
         img: '',
@@ -130,7 +146,7 @@ const AddMovieForm = () => {
             type="submit"
             className="w-full py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-all shadow-lg"
           >
-            Submit Movie
+            Update Movie
           </button>
         </div>
       </form>
@@ -138,4 +154,4 @@ const AddMovieForm = () => {
   );
 };
 
-export default AddMovieForm;
+export default Editmovie;

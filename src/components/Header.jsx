@@ -1,16 +1,22 @@
 import { useState } from "react";
-import { IoSearchSharp } from "react-icons/io5";
+// import { IoSearchSharp } from "react-icons/io5";
 import { HiMenu, HiX } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navigate = useNavigate()
+
+  const handleClick = ()=>{
+    navigate("/")
+  }
 
   return (
     <header className="absolute top-0 w-full bg-transparent z-50">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div>
-          <img src="/images/logo.png" alt="Logo" className="h-12 md:h-16" />
+          <img src="/images/logo.png" alt="Logo" className="h-12 md:h-16" onClick={handleClick}/>
         </div>
         {/* <ul className="hidden lg:flex gap-8 font-semibold text-[17px] text-white">
           <li className="cursor-pointer">Home</li>
