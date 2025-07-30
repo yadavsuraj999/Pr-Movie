@@ -19,7 +19,7 @@ const Movieinfo = () => {
   };
 
   const handleDelete = async (id) => {
-      console.log(id);
+    console.log(id);
     try {
       await axios.delete(`http://localhost:5000/movies/${id}`);
       toast.success('Movie deleted');

@@ -1,18 +1,3 @@
 {
-  "movies": [
-    {
-      "id": "373d",
-      "moviename": "zdasdsdfsdf-sdflkjhsdf",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
-      "Genre": "Horror",
-      "description": "<p>sdfsdfsdf</p>"
-    },
-    {
-      "id": "50b6",
-      "moviename": "zdasd",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
-      "Genre": "Drama",
-      "description": "<h1><u>asdfasdasdasd</u></h1><p></p>"
-    }
-  ]
+  "movies": []
 }

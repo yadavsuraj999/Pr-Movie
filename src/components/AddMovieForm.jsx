@@ -56,15 +56,7 @@ const AddMovieForm = () => {
           Add New Movie
         </h2>
         <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 flex items-center justify-center p-4">
-            <div className="overflow-hidden rounded-xl border-2 border-cyan-400 shadow-md w-full max-w-sm">
-              <img
-                src={input.img ? input.img : "public/images/no-images.png"}
-                alt="Movie Background"
-                className="w-full h-64 object-cover"
-              />
-            </div>
-          </div>
+
           <div className="md:w-1/2 p-8">
             <div className="space-y-5">
               <div>
@@ -114,6 +106,15 @@ const AddMovieForm = () => {
                   <option value="Horror">Horror</option>
                 </select>
               </div>
+            </div>
+          </div>
+          <div className="md:w-1/2 flex items-center justify-center p-4">
+            <div className="overflow-hidden rounded-xl border-2 border-cyan-400 shadow-md w-full max-w-sm">
+              <img
+                src={input.img ? input.img : "/images/images-no.png"}
+                alt="Movie Background"
+                className="w-full h-64"
+              />
             </div>
           </div>
         </div>
