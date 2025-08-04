@@ -11,6 +11,7 @@ const AddMovieForm = () => {
     img: '',
     Genre: '',
   });
+  console.log(input);
 
   const navigate = useNavigate();
 

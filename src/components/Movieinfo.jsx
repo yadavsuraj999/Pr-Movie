@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import Header from "./Header"; // Import your header
 
 const Movieinfo = () => {
   const [movies, setMovies] = useState([]);
@@ -9,29 +10,29 @@ const Movieinfo = () => {
 
   const fetchMovies = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/movies');
-      const data = res.data;
-      setMovies(data);
+      const res = await axios.get("http://localhost:5000/movies");
+      setMovies(res.data);
     } catch (error) {
-      toast.error('Failed to fetch movies');
-      console.error(error);
+      toast.error("Failed to fetch movies");
     }
   };
 
   const handleDelete = async (id) => {
-    console.log(id);
     try {
       await axios.delete(`http://localhost:5000/movies/${id}`);
-      toast.success('Movie deleted');
+      toast.success("Movie deleted");
       fetchMovies();
     } catch (err) {
-      toast.error('Failed to delete movie');
+      toast.error("Failed to delete movie");
     }
   };
 
-
   const handleEdit = (id) => {
     navigate(`/edit-movie/${id}`);
+  };
+
+  const handleView = (id) => {
+    navigate(`/view-movie/${id}`);
   };
 
   useEffect(() => {
@@ -39,57 +40,71 @@ const Movieinfo = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gray-900 px-4 py-10 flex flex-col items-center">
-      <div className="w-full max-w-6xl">
-        <h2 className="text-3xl font-semibold text-cyan-400 mb-8 text-center">Movie Table</h2>
+    <>
+      <Header />
+      <section className="pt-32 pb-20 px-4 min-h-screen bg-gray-900 text-white">
+        <div className="container mx-auto max-w-6xl">
+          <h1 className="text-3xl font-bold text-cyan-400 mb-6 text-center">
+            Movie List
+          </h1>
 
-        {movies.length === 0 ? (
-          <p className="text-center text-cyan-200 mt-8">No movies found. Add one!</p>
-        ) : (
-          <div className="overflow-x-auto rounded-xl shadow-lg border border-white/10 bg-white/5 backdrop-blur">
-            <table className="min-w-full text-white text-sm">
-              <thead>
-                <tr className="bg-cyan-400/10 text-cyan-300 text-left uppercase text-xs tracking-wider">
-                  <th className="px-6 py-4">Poster</th>
-                  <th className="px-6 py-4">Title</th>
-                  <th className="px-6 py-4">Genre</th>
-                  <th className="px-6 py-4 text-center">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {movies.map((movie) => (
-                  <tr key={movie.id} className="border-b border-white/10 hover:bg-white/10 transition">
-                    <td className="px-6 py-3">
-                      <img
-                        src={movie.img}
-                        alt={movie.moviename}
-                        className="w-20 h-28 object-cover rounded-md border border-cyan-400"
-                      />
-                    </td>
-                    <td className="px-6 py-3 font-medium">{movie.moviename}</td>
-                    <td className="px-6 py-3">{movie.Genre}</td>
-                    <td className="px-6 py-3 text-center">
-                      <button
-                        onClick={() => handleEdit(movie.id)}
-                        className=" text-black text-xs px-3 py-1 rounded mr-2 "
-                      >
-                        Edit
-                      </button>
-                      <button
-                        onClick={() => handleDelete(movie.id)}
-                        className=" text-red-700 text-xs px-3 py-1 rounded "
-                      >
-                        Delete
-                      </button>
-                    </td>
+          {movies.length === 0 ? (
+            <p className="text-center text-cyan-200 mt-8">No movies found. Add one!</p>
+          ) : (
+            <div className="overflow-x-auto rounded-lg shadow-lg border border-white/10 bg-white/5 backdrop-blur">
+              <table className="min-w-full text-sm text-left">
+                <thead>
+                  <tr className="bg-cyan-400/10 text-cyan-300 uppercase text-xs tracking-wider">
+                    <th className="px-6 py-4">Poster</th>
+                    <th className="px-6 py-4">Title</th>
+                    <th className="px-6 py-4">Genre</th>
+                    <th className="px-6 py-4 text-center">Actions</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-      </div>
-    </section>
+                </thead>
+                <tbody>
+                  {movies.map((movie) => (
+                    <tr
+                      key={movie.id}
+                      className="border-b border-white/10 hover:bg-white/10 transition"
+                    >
+                      <td className="px-6 py-3">
+                        <img
+                          src={movie.img}
+                          alt={movie.moviename}
+                          className="w-20 h-28 object-cover rounded-md border border-cyan-400"
+                        />
+                      </td>
+                      <td className="px-6 py-3 font-medium">{movie.moviename}</td>
+                      <td className="px-6 py-3">{movie.Genre}</td>
+                      <td className="px-6 py-3 text-center space-x-2">
+                        <button
+                          onClick={() => handleEdit(movie.id)}
+                          className="bg-amber-500/20 text-amber-400 hover:bg-amber-500/40 px-3 py-1 rounded text-xs transition"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={()=>handleView(movie.id)}
+                          className="bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/40 px-3 py-1 rounded text-xs transition"
+                        >
+                          View
+                        </button>
+                        <button
+                          onClick={() => handleDelete(movie.id)}
+                          className="bg-red-600/20 text-red-500 hover:bg-red-600/40 px-3 py-1 rounded text-xs transition"
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Movieinfo from "./components/Movieinfo";
 import { ToastContainer } from "react-toastify";
 import Editmovie from "./components/Editmovie";
+import Viewmovie from "./components/Viewmovie";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/add-movie" element={<AddMovieForm />} />
           <Route path="/movie-info" element={<Movieinfo/>} />
+          <Route path="/view-movie/:id" element={<Viewmovie/>} />
           <Route path="/edit-movie/:id" element={<Editmovie/>} />
         </Routes>
       </BrowserRouter>

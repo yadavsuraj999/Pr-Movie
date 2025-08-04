@@ -3,7 +3,7 @@ import TiptapEditor from './TiptapEditor';
 import { data, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { useEditor } from '@tiptap/react';
+// import { useEditor } from '@tiptap/react';
 
 const Editmovie = () => {
   const [description, setDescription] = useState('');
@@ -21,8 +21,9 @@ const Editmovie = () => {
        const moviedata = await axios.get('http://localhost:5000/movies')
        const data = moviedata.data.find((obj)=>{
             return obj.id === id
-       })
-       setInput(data)
+          })
+          setInput(data)
+       setDescription(data.description)
     }
     fetch()
   }, [])

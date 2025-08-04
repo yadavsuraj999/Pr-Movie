@@ -8,7 +8,7 @@ const Header = () => {
 
   const navigate = useNavigate()
 
-  const handleClick = ()=>{
+  const handleClick = () => {
     navigate("/")
   }
 
@@ -16,8 +16,11 @@ const Header = () => {
     <header className="absolute top-0 w-full bg-transparent z-50">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="cursor-pointer">
-          <img src="/images/logo.png" alt="Logo" className="w-36  " onClick={handleClick}/>
+          <img src="/images/logo.png" alt="Logo" className="w-36  " onClick={handleClick} />
         </div>
+
+
+
         {/* <ul className="hidden lg:flex gap-8 font-semibold text-[17px] text-white">
           <li className="cursor-pointer">Home</li>
           <li className="cursor-pointer">Movie</li>
@@ -81,3 +84,4 @@ const Header = () => {
 };
 
 export default Header;
+

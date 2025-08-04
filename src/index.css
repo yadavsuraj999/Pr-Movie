@@ -42,3 +42,9 @@
   @apply text-white;
 }
 
+.tiptap a {
+  @apply text-blue-600 underline;
+}
+
+
+

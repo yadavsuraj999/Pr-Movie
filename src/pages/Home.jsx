@@ -3,6 +3,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const slides = [
@@ -84,11 +85,11 @@ const Home = () => {
             >
               <div className="absolute inset-0 bg-black bg-opacity-50"></div>
               <div className="container mx-auto relative z-10 flex items-center h-full px-6">
-                <div>
-                  <h3 className="text-zinc-200 text-xl md:text-2xl font-semibold">
+                <div className="max-w-xl">
+                  <h3 className="text-zinc-200 text-xl md:text-2xl font-semibold mb-1">
                     {slide.title}
                   </h3>
-                  <h1 className="text-white text-4xl md:text-6xl font-bold">
+                  <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight mb-4">
                     {slide.movieinfo}
                   </h1>
                   <div className="flex flex-wrap gap-3 text-white my-3 text-sm md:text-base">
@@ -98,9 +99,12 @@ const Home = () => {
                     <span>-</span>
                     <span>{slide.month}</span>
                   </div>
-                  <p className="text-gray-300 max-w-xl">
+                  <p className="text-gray-300 mb-6">
                     {slide.des}
                   </p>
+                  <Link to={"/movie-info"} className="px-6 py-3 bg-cyan-500 text-white font-semibold rounded-md shadow-lg hover:bg-cyan-600 transition-all duration-300 hover:scale-105">
+                    Explore Movie
+                  </Link>
                 </div>
               </div>
             </div>

@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tiptap/extension-color": "^3.0.9",
     "@tiptap/extension-heading": "^3.0.7",
+    "@tiptap/extension-highlight": "^3.0.9",
+    "@tiptap/extension-link": "^3.0.9",
+    "@tiptap/extension-text-style": "^3.0.9",
     "@tiptap/extension-underline": "^3.0.7",
     "@tiptap/react": "^3.0.7",
     "@tiptap/starter-kit": "^3.0.7",
