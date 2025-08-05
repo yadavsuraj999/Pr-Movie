@@ -22,7 +22,7 @@ const Viewmovie = () => {
 
   return (
     <section className="bg-gray-900 px-4 py-10 pt-24 min-h-screen flex justify-center items-start">
-      <div className="max-w-4xl w-full bg-white/5 backdrop-blur-md rounded-xl shadow-lg border border-white/10 text-white relative">
+      <div className="max-w-4xl w-full bg-white/5 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 text-white relative">
         <Link
           to="/movie-info"
           className="absolute top-4 right-4 px-3 py-1.5 bg-black bg-opacity-60 text-white font-semibold rounded-md shadow-lg hover:bg-cyan-600 transition-all duration-300 hover:scale-105 text-sm z-10"

@@ -5,13 +5,12 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const AddMovieForm = () => {
-  const [description, setDescription] = useState('');
   const [input, setInput] = useState({
     moviename: '',
     img: '',
     Genre: '',
+    description: '',
   });
-  console.log(input);
 
   const navigate = useNavigate();
 
@@ -22,25 +21,20 @@ const AddMovieForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (Object.values(input).some((value) => value.trim() === '') || description.trim() === '') {
+    if (Object.values(input).some((value) => value.trim() === '')) {
       toast.error('Please fill in all fields....');
       return;
     }
 
-    const movieData = {
-      ...input,
-      description,
-    };
-
     try {
-      await axios.post('http://localhost:5000/movies', movieData);
+      await axios.post('http://localhost:5000/movies', input);
       toast.success('Movie added successfully!');
       setInput({
         moviename: '',
         img: '',
         Genre: '',
+        description: '',
       });
-      setDescription('');
       navigate('/movie-info');
     } catch (error) {
       toast.error('Server error. Please try again.');
@@ -106,10 +100,10 @@ const AddMovieForm = () => {
                   <option value="Drama" className="bg-gray-800 text-cyan-400">Drama</option>
                   <option value="Horror" className="bg-gray-800 text-cyan-400">Horror</option>
                 </select>
-
               </div>
             </div>
           </div>
+
           <div className="md:w-1/2 flex items-center justify-center p-4">
             <div className="overflow-hidden rounded-xl border-2 border-cyan-400 shadow-md w-full max-w-sm">
               <img
@@ -126,7 +120,10 @@ const AddMovieForm = () => {
             <label htmlFor="description" className="block mb-1 text-sm font-medium text-cyan-200">
               Description
             </label>
-            <TiptapEditor value={description} onChange={setDescription} />
+            <TiptapEditor
+              value={input.description}
+              onChange={(value) => setInput({ ...input, description: value })}
+            />
           </div>
 
           <button
