@@ -3,7 +3,6 @@ import TiptapEditor from './TiptapEditor';
 import { data, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-// import { useEditor } from '@tiptap/react';
 
 const Editmovie = () => {
   const [description, setDescription] = useState('');
@@ -13,17 +12,17 @@ const Editmovie = () => {
     Genre: '',
   });
 
-  const {id} = useParams()
+  const { id } = useParams()
 
-  
-  useEffect(()=>{
-    const fetch = async ()=>{
-       const moviedata = await axios.get('http://localhost:5000/movies')
-       const data = moviedata.data.find((obj)=>{
-            return obj.id === id
-          })
-          setInput(data)
-       setDescription(data.description)
+
+  useEffect(() => {
+    const fetch = async () => {
+      const moviedata = await axios.get('http://localhost:5000/movies')
+      const data = moviedata.data.find((obj) => {
+        return obj.id === id
+      })
+      setInput(data)
+      setDescription(data.description)
     }
     fetch()
   }, [])
@@ -119,17 +118,26 @@ const Editmovie = () => {
                 <select
                   id="Genre"
                   value={input.Genre}
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   onChange={handleChange}
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 appearance-none"
                 >
-                  <option value="" disabled>
+                  <option value="" disabled className="bg-gray-800 text-white/80">
                     Select Genre
                   </option>
-                  <option value="Action">Action</option>
-                  <option value="Comedy">Comedy</option>
-                  <option value="Drama">Drama</option>
-                  <option value="Horror">Horror</option>
+                  <option value="Action" className="bg-gray-800 text-white/80">
+                    Action
+                  </option>
+                  <option value="Comedy" className="bg-gray-800 text-white/80">
+                    Comedy
+                  </option>
+                  <option value="Drama" className="bg-gray-800 text-white/80">
+                    Drama
+                  </option>
+                  <option value="Horror" className="bg-gray-800 text-white/80">
+                    Horror
+                  </option>
                 </select>
+
               </div>
             </div>
           </div>

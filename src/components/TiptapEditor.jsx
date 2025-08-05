@@ -4,7 +4,6 @@ import StarterKit from '@tiptap/starter-kit';
 import Underline from '@tiptap/extension-underline';
 import Heading from '@tiptap/extension-heading';
 import Link from '@tiptap/extension-link';
-// import TextStyle from '@tiptap/extension-text-style';
 import Color from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
 import { TextStyle } from '@tiptap/extension-text-style';
@@ -121,7 +120,6 @@ const TiptapEditor = ({ value, onChange }) => {
         >
           Highlight
         </button>
-        {/* Color picker */}
         <input
           type="color"
           onChange={(e) => editor.chain().focus().setColor(e.target.value).run()}

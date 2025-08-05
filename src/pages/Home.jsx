@@ -73,7 +73,7 @@ const Home = () => {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        navigation={true}
+        // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >

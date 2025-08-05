@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header"; // Import your header
-
+import Header from "./Header"; 
 const Movieinfo = () => {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
@@ -76,26 +75,29 @@ const Movieinfo = () => {
                       </td>
                       <td className="px-6 py-3 font-medium">{movie.moviename}</td>
                       <td className="px-6 py-3">{movie.Genre}</td>
-                      <td className="px-6 py-3 text-center space-x-2">
-                        <button
-                          onClick={() => handleEdit(movie.id)}
-                          className="bg-amber-500/20 text-amber-400 hover:bg-amber-500/40 px-3 py-1 rounded text-xs transition"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          onClick={()=>handleView(movie.id)}
-                          className="bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/40 px-3 py-1 rounded text-xs transition"
-                        >
-                          View
-                        </button>
-                        <button
-                          onClick={() => handleDelete(movie.id)}
-                          className="bg-red-600/20 text-red-500 hover:bg-red-600/40 px-3 py-1 rounded text-xs transition"
-                        >
-                          Delete
-                        </button>
+                      <td className="px-4 py-2 text-center">
+                        <div className="flex flex-col sm:flex-row sm:justify-center sm:space-x-2 space-y-2 sm:space-y-0">
+                          <button
+                            onClick={() => handleEdit(movie.id)}
+                            className="bg-amber-500/20 text-amber-400 hover:bg-amber-500/40 px-3 py-1 rounded text-xs transition"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() => handleView(movie.id)}
+                            className="bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/40 px-3 py-1 rounded text-xs transition"
+                          >
+                            View
+                          </button>
+                          <button
+                            onClick={() => handleDelete(movie.id)}
+                            className="bg-red-600/20 text-red-500 hover:bg-red-600/40 px-3 py-1 rounded text-xs transition"
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </td>
+
                     </tr>
                   ))}
                 </tbody>

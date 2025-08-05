@@ -95,17 +95,18 @@ const AddMovieForm = () => {
                 <select
                   id="Genre"
                   value={input.Genre}
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   onChange={handleChange}
+                  className="w-full px-4 py-2 bg-gray-800 border border-cyan-400 rounded-md text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 appearance-none"
                 >
-                  <option value="" disabled>
+                  <option value="" disabled className="bg-gray-800 text-cyan-400">
                     Select Genre
                   </option>
-                  <option value="Action">Action</option>
-                  <option value="Comedy">Comedy</option>
-                  <option value="Drama">Drama</option>
-                  <option value="Horror">Horror</option>
+                  <option value="Action" className="bg-gray-800 text-cyan-400">Action</option>
+                  <option value="Comedy" className="bg-gray-800 text-cyan-400">Comedy</option>
+                  <option value="Drama" className="bg-gray-800 text-cyan-400">Drama</option>
+                  <option value="Horror" className="bg-gray-800 text-cyan-400">Horror</option>
                 </select>
+
               </div>
             </div>
           </div>

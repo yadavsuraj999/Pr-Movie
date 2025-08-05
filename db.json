@@ -1,32 +1,18 @@
 {
   "movies": [
     {
-      "id": "33ad",
+      "id": "8f52",
+      "moviename": "danger ",
+      "img": "https://t4.ftcdn.net/jpg/06/78/51/55/240_F_678515518_mBTG4aFYf8VCVWTL75PVaiMQhigbhhlY.jpg",
+      "Genre": "Horror",
+      "description": "<h1>sdfsdfs</h1><p></p>"
+    },
+    {
+      "id": "ded9",
       "moviename": "zdasd",
-      "img": "https://t4.ftcdn.net/jpg/06/78/51/55/240_F_678515518_mBTG4aFYf8VCVWTL75PVaiMQhigbhhlY.jpg",
-      "Genre": "Comedy",
-      "description": "<h1>assdsd sfhskjfhskdhfjkh <mark>jkghfjlkshdlkh</mark></h1><p></p>"
-    },
-    {
-      "id": "8c1a",
-      "moviename": "dfgdfd",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
-      "Genre": "Drama",
-      "description": "<h1>dfgsssssssssgdfgsdfgdsfgdfkasjghdlkjas fjasg gsud fgjuasgdfugsyugyuweturgusygfu ugyusdgfjgsjfg uasgdfugdfgusdfg usdgfgsuifuidfghisdf sgfgsdfkgsdfggsfgjadgf sgfjgdjfsdfasdfsdfsdf</h1><p></p>"
-    },
-    {
-      "id": "6b33",
-      "moviename": "zdasdsdfsdf-sdflkjhsdf",
-      "img": "https://t4.ftcdn.net/jpg/06/78/51/55/240_F_678515518_mBTG4aFYf8VCVWTL75PVaiMQhigbhhlY.jpg",
       "Genre": "Action",
-      "description": "<h1>sadfasdfa <strong>dfsdfasdf</strong>  <em>sddfas</em></h1><h2><u>sdfsdfad</u></h2><h3><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://chatgpt.com/\">sdfasdfsd</a></h3><p><mark>fasdfsdfsdf</mark></p><p></p>"
-    },
-    {
-      "id": "5f79",
-      "moviename": "zdasd",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
-      "Genre": "Comedy",
-      "description": "<h1><span style=\"color: rgb(238, 240, 255);\">An avatar is <strong>a visual representation of a person in the digital </strong></span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://gentechtreedesign.co.in/web-apps/wp/streamlab/red/\"><span style=\"color: rgb(238, 240, 255);\"><strong>world, </strong></span></a><span style=\"color: rgb(238, 240, 255);\"><strong>often used in online games, social media, and <mark>virtual </mark>worlds</strong>. It can be a 2D </span><span style=\"color: rgb(230, 0, 0);\">image</span><span style=\"color: rgb(238, 240, 255);\"> or a 3D model that a user controls to interact with others and the environment. The term also has roots in Hinduism, <em>where</em> it <u>refers</u> to the incarnation of a <strong>deity.&nbsp;</strong></span></h1><p></p>"
+      "description": "<h1>sdfsd</h1><p></p>"
     }
   ]
 }
