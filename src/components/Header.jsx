@@ -25,7 +25,7 @@ const Header = () => {
         <div className="hidden lg:flex items-center gap-5">
           <Link
             to="/add-movie"
-            className="px-3 py-2 bg-cyan-400 text-black font-semibold rounded hover:bg-cyan-300 transition-all"
+            className="px-3 py-2 bg-cyan-400 text-black font-semibold rounded hover:bg-cyan-300 hover:text-blue-700 transition-all"
           >
             Add Movie
           </Link>
@@ -43,7 +43,7 @@ const Header = () => {
           <div className="mt-4 space-y-4">
             <Link
               to="/add-movie"
-              className="block w-full px-3 py-2 bg-cyan-400 text-black font-semibold rounded hover:bg-cyan-300 transition-all"
+              className="block w-full px-3 py-2 bg-cyan-400 text-black font-semibold rounded hover:bg-cyan-300 hover:text-blue-700 transition-all"
               onClick={() => setIsMenuOpen(false)}
             >
               Add Movie
